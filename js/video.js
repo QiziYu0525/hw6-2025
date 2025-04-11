@@ -47,6 +47,17 @@ document.querySelector("#faster").addEventListener("click", function () {
 	}
 });
 
+document.querySelector("#skip").addEventListener("click", function () {
+	let newTime = video.currentTime + 10;
+	if (newTime >= video.duration) {
+		video.currentTime = 0;
+		console.log("Restarting video");
+	} else {
+		video.currentTime = newTime;
+		console.log("Current time: " + video.currentTime);
+	}
+});
+
 document.querySelector("#slider").addEventListener("input", function () {
 	let volume = this.value;
 	video.volume = volume / 100;
